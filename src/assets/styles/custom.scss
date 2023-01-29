@@ -1,0 +1,184 @@
+// 当前项目单独修改的一些全局样式，集中在此修改
+// element-ui 样式覆盖
+.el-input__inner {
+  border-radius: 0 !important;
+  border-color: #ccc !important;
+}
+
+.el-button {
+  border-radius: 0 !important;
+  &--text {
+    color: $table-operation-color;
+  }
+  &--primary {
+    &.is-plain {
+      background: #fff !important;
+      &:hover,
+      &:focus {
+        background: $primaryColor !important;
+      }
+    }
+  }
+}
+
+.el-tabs {
+  &__item {
+    &.is-active {
+      color: $theme-secondary-color !important;
+    }
+    &:hover {
+      color: $theme-secondary-color !important;
+    }
+  }
+  &__active-bar {
+    background: $theme-secondary-color !important;
+  }
+}
+
+.el-table {
+  .cell {
+    color: $table-content-color !important;
+  }
+  th > .cell {
+    color: $table-title-color !important;
+  }
+}
+//360浏览器el-table错位问题
+.el-table th.gutter{
+  display: table-cell!important;
+}
+
+.el-form-item__label {
+  color: $crud-label-text-color !important;
+  font-weight: 400 !important;
+}
+
+.el-dropdown {
+  margin-left:10px;
+  // 更多插件样式
+  &-link {
+    cursor: pointer;
+    color: #2289ff;
+    font-size: 12px;
+  }
+}
+
+// 项目全局类名样式
+.searchBox-btn {
+  &_check {
+    background-color: $primaryColor !important;
+  }
+  &_cancel {
+    border-color: $primaryColor !important;
+    color: $primaryColor !important;
+  }
+  &_check, &_cancel {
+    border-radius: 0 !important;
+    width: 66px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+  }
+}
+
+.searchBox-high .searchBox-btn .high-link {
+  color: $primaryColor !important;
+}
+
+.high-search-crud {
+  .searchBox-form {
+    .el-form-item {
+      padding-right: 2.5% !important;
+      &__content {
+        flex: 1;
+      }
+    }
+    .fmDesignItem {
+      flex: 1;
+    }
+    .el-range-separator {
+      width: 15%;
+      min-width: 20px;
+    }
+  }
+  .searchBox-wrapper {
+    background-color: #fff;
+    padding: 20px 20px 0;
+    .searchBox-high {
+      padding: 0;
+    }
+    //搜索框label两行就会被限制高度被截去底部
+    .searchBox-form .el-form-item label {
+      max-height: 50px !important;
+    }
+  }
+  // 按钮栏样式类名
+  .btns-bar {
+    margin: 20px 0;
+  }
+  .el-pagination {
+    margin: 0 !important;
+    padding:  22px 5px;
+    // background-color: #fff;
+  }
+}
+
+.app-wrapper-create-page{
+  margin-top: 50px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+//新增界面样式
+.create-page {
+  // width: 80%;
+  margin:0 auto;
+  background-color: #fff;
+  padding: 34px;
+  height:100%;
+  display: block;
+  // overflow: auto;
+  &--layout {
+    width: auto;
+  }
+  .el-form-item__label {
+    color: $details-label-text-color !important;
+  }
+}
+
+// 一些没用crud组件的页面背景样式统一修改
+.custom-con,
+.user-box,
+.role-management,
+.role-permi,
+.button-wrap-fixed,
+.dept-management,
+.post-new,
+.dict-management,
+.config {
+  background-color: #fff;
+}
+
+.role-permi {
+  height: 100%;
+}
+
+//表单输入框长度
+.form-input {
+  width:250px !important;
+}
+
+.formItem-head {
+  line-height: 20px;
+  border-left: 4px solid #4282e4;
+  margin-bottom: 20px;
+  padding-left: 7px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}

@@ -1,0 +1,5 @@
+export const EVALUATE_TPL_ITEM_VALUE = 'evaluateTplItemValue'
+export const EVALUATE_TPL_ITEM = 'evaluateTplItem'
+export const GRADING_ITEM_VALUE = 'gradingItemValue'
+export const DIRECT_ITEM_VALUE = 'directItemValue'
+export const STUDENT_EVL_CODE = 'ucStudent'

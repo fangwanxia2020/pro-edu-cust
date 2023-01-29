@@ -1,0 +1,264 @@
+// 全局scss 变量
+// 主题色
+$primaryColor: var(--primaryColor);
+$primaryColor-ie: #3176FB;
+
+// 主题蓝色
+$theme-color: $primaryColor;
+$theme-secondary-color: #45A8FB; //主题辅色
+//导航颜色
+$nav-main-color: #161922;//导航主色
+$nav-secondary-color: #1E222D;//导航辅色
+$nav-top-color: #28303D;//顶部导航颜色
+$nav-font-color: #BFC3C5;//导航栏文字颜色
+
+// 背景
+$base-bgc: #F3F4F7;
+$bgc-white: #fff;
+
+// 分割线颜色
+$line-color: #dcdfe6;
+
+//字体大小
+$font-size18: 36px;
+$font-size16: 32px;
+$font-size14: 28px;
+$font-size12: 24px;
+$font-size10: 20px;
+
+// 文字颜色
+$text-color: #383838;
+$text-active: #f5c94d;
+$text-white: #fff;
+$text-red: #e31612;
+$text-gray: #d5d5d5;
+
+//表格颜色
+$table-title-color: #999;//表格标题颜色
+$table-content-color: #333;//表格内容颜色
+$table-operation-color: #2289ff;//表格操作字体颜色
+
+$crud-label-text-color: $table-title-color;  // 列表查询字段标签颜色
+$details-label-text-color: #666;  // 详情字段标签标签颜色
+
+// scss 函数
+//文字
+@mixin font-style($color, $fongsize) {
+  color: $color;
+  font-size: $fongsize;
+}
+
+// 文字省略显示
+@mixin ellipsis($line:2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//盒子模型兼容性
+$border-box:border-box;
+
+@mixin box-sizing($border-box) {
+  box-sizing: $border-box;
+  -o-box-sizing: $border-box;
+  -ms-box-sizing: $border-box;
+  -moz-box-sizing: $border-box;
+  -webkit-box-sizing: $border-box;
+}
+
+//圆角兼容性
+@mixin border-radius($x, $y:$x) {
+  border-radius: $x $y;
+  -o-border-radius: $x $y;
+  -ms-border-radius: $x $y;
+  -moz-border-radius: $x $y;
+  -webkit-border-radius: $x $y;
+}
+
+//长、宽
+@mixin wh($width, $height:$width) {
+  width: $width;
+  height: $height;
+}
+
+//flex布局
+@mixin df {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+}
+
+@mixin flex($flex:1) {
+  -webkit-flex: $flex;
+  -moz-flex: $flex;
+  flex: $flex;
+}
+
+@mixin fac {
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin faj($atype: stretch, $jtype: stretch) {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+
+  -webkit-align-items: $atype;
+  -moz-align-items: $atype;
+  align-items: $atype;
+
+  -webkit-justify-content: $jtype;
+  -moz-justify-content: $jtype;
+  justify-content: $jtype;
+}
+
+//flex 布局 主轴从上到下 和 子元素 对其方式
+@mixin fcaj($atype: stretch, $jtype: stretch) {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+
+  -webkit-align-items: $atype;
+  -moz-align-items: $atype;
+  align-items: $atype;
+
+  -webkit-justify-content: $jtype;
+  -moz-justify-content: $jtype;
+  justify-content: $jtype;
+}
+
+
+//定位
+//absolute
+@mixin pos-ab-lt($left, $top) {
+  position: absolute;
+  left: $left;
+  top: $top;
+}
+
+@mixin pos-ab-rb($right, $bottom) {
+  position: absolute;
+  right: $right;
+  bottom: $bottom;
+}
+
+//fixed
+@mixin pos-fixed-lt($left, $top) {
+  position: fixed;
+  left: $left;
+  top: $top;
+}
+
+@mixin pos-fixed-rb($right, $bottom) {
+  position: fixed;
+  right: $right;
+  bottom: $bottom;
+}
+
+//定位上下左右居中
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin ct {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//定位左右居中
+@mixin cl {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// 边框
+@mixin b($size: 1px, $color: $line-color) {
+  border: $size solid $color;
+}
+
+@mixin bt($size: 1px, $color: $line-color) {
+  border-top: $size solid $color;
+}
+
+@mixin br($size: 1px, $color: $line-color) {
+  border-right: $size solid $color;
+}
+
+@mixin bb($size: 1px, $color: $line-color) {
+  border-bottom: $size solid $color;
+}
+
+@mixin bl($size: 1px, $color: $line-color) {
+  border-left: $size solid $color;
+}
+
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin scrollBar {
+  &::-webkit-scrollbar {
+    width: 4px;
+    &-thumb {
+      border-radius: 20px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+      background: rgba(0, 0, 0, .2);
+      &:hover {
+        background: rgba(0, 0, 0, .3);
+      }
+    }
+    &-track {
+      border-radius: 0;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, .1);
+      background: rgba(0, 0, 0, .1);
+    }
+  }
+}
+
+@mixin relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+// display
+// @mixin flex($direction: column, $align: center, $content: flex-start) {
+//   display: flex;
+//   flex-direction: $direction;
+//   align-items: $align;
+//   justify-content: $content;
+// }
+
+//border
+// @mixin bt($width: 1px, $color: #dcdcdc) {
+//   border-bottom: solid $width $color;
+// }
+
+// 文字省略显示
+// @mixin ellipsis($line:2) {
+//   display: -webkit-box;
+//   -webkit-box-orient: vertical;
+//   -webkit-line-clamp: $line;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+// }
